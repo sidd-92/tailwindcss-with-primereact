@@ -1,10 +1,8 @@
 import React from "react";
 import { Card } from "primereact/card";
+import CalendarComponent from "../CalendarComponent/CalendarComponent";
 const footer = (
   <span>
-    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 mr-2 rounded">
-      Edit
-    </button>
     <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 mr-2 rounded">
       Save
     </button>
@@ -19,7 +17,9 @@ class CardComponent extends React.Component {
         footer={footer}
         className="h-full px-4 py-4"
       >
-        Content
+        <div className="grid grid-cols-1">
+          <CalendarComponent />
+        </div>
       </Card>
     );
   }

@@ -5,3 +5,9 @@ body {
   padding: 0px;
   margin: 0px;
 }
+
+.p-calendar .p-inputtext {
+  border: none;
+  border-bottom: 1px solid #ccc;
+  width: 100%;
+}
