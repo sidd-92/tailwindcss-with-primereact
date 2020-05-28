@@ -1,45 +1,33 @@
-import React from "react";
-import logo from "./logo.svg";
-import MenuNav from "./components/MenuNav/MenuNav.js";
-import CardComponent from "./components/CardComponent/CardComponent";
-import getAllCars from "./services/CarService";
-import { DataTable } from "primereact/datatable";
-import { Column } from "primereact/column";
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      cars: [],
-    };
-  }
-  componentDidMount() {
-    let cars = getAllCars();
-    this.setState({ cars });
-  }
+import React, { Component } from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Loader from "./components/Loader";
+//link names
+//page names
+// Containers
+const DefaultLayout = React.lazy(() => import("./containers/DefaultLayout"));
+
+// Pages
+const Page404 = React.lazy(() => import("./components/views/Page404"));
+class App extends Component {
   render() {
     return (
-      <div class="w-full bg-green-100">
-        <MenuNav />
-        <div className="w-full max-w-screen-md mx-auto py-5">
-          <CardComponent />
-        </div>
-        <DataTable
-          responsive={true}
-          className="w-full max-w-screen-md mx-auto py-5"
-          value={this.state.cars}
-        >
-          <Column
-            field="car"
-            header="Car ID"
-            body={(rowData) => (
-              <p className="text-2xl xl:text-base">{rowData.car}</p>
-            )}
-          />
-          <Column field="car_make" header="Car Make" />
-          <Column field="car_owner" header="Owner" />
-          <Column field="car_color" header="Color" />
-        </DataTable>
-      </div>
+      <Router basename="/about">
+        <React.Suspense fallback={<Loader />}>
+          <Switch>
+            <Route
+              exact
+              path="/404"
+              name="Page 404"
+              render={(props) => <Page404 {...props} />}
+            />
+            <Route
+              path="/"
+              name="Home"
+              render={(props) => <DefaultLayout {...props} />}
+            />
+          </Switch>
+        </React.Suspense>
+      </Router>
     );
   }
 }

@@ -1,11 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./styles/tailwind.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import "primereact/resources/themes/nova-light/theme.css";
 import "primereact/resources/primereact.min.css";
 import "primeicons/primeicons.css";
+import "./styles/tailwind.css";
+import "./styles/custom.css";
 
 ReactDOM.render(<App />, document.getElementById("root"));
 

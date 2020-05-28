@@ -15,7 +15,7 @@ module.exports = {
       black: "#000",
       white: "#fff",
 
-      primary: "#2baae1",
+      primary: "#49B728",
       secondary: "#f47f20",
       "bg-google": "#3d81f0",
       "bg-facebook": "#285295",
