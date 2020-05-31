@@ -11,7 +11,7 @@ const Page404 = React.lazy(() => import("./components/views/Page404"));
 class App extends Component {
   render() {
     return (
-      <Router basename="/about">
+      <Router basename="/">
         <React.Suspense fallback={<Loader />}>
           <Switch>
             <Route
