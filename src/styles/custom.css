@@ -1,3 +1,7 @@
 .p-slidemenu {
   width: 100%;
 }
+
+body .p-fluid .p-autocomplete .p-autocomplete-dropdown.p-button {
+  width: 2.357em;
+}

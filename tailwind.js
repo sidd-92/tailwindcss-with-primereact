@@ -23,6 +23,8 @@ module.exports = {
       "bg-twitter": "#1ca0f1",
       "primary-variant": "#AEE2A6",
       "primary-bg": "#ffffff",
+      "icon-color": "#ef233c",
+      "header-bg": "#023e8a",
       "primary-bg-gradient": "#DDF0D6",
       "primary-bg-surface": "#EFF0F3",
       error: "#D61813",

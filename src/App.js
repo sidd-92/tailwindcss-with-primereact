@@ -8,6 +8,7 @@ const DefaultLayout = React.lazy(() => import("./containers/DefaultLayout"));
 
 // Pages
 const Page404 = React.lazy(() => import("./components/views/Page404"));
+const PageHome = React.lazy(() => import("./components/views/PageHome"));
 class App extends Component {
   render() {
     return (
@@ -21,8 +22,14 @@ class App extends Component {
               render={(props) => <Page404 {...props} />}
             />
             <Route
-              path="/"
+              exact
+              path="/home"
               name="Home"
+              render={(props) => <PageHome {...props} />}
+            />
+            <Route
+              path="/"
+              name="Admin"
               render={(props) => <DefaultLayout {...props} />}
             />
           </Switch>

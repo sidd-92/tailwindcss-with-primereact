@@ -22,6 +22,13 @@ class DefaultLayout extends Component {
               label: "Edit Profile",
               icon: "pi pi-fw pi-plus",
             },
+            {
+              label: "About",
+              icon: "pi pi-fw pi-plus",
+              command: (event) => {
+                this.props.history.push("/about");
+              },
+            },
           ],
         },
         {
